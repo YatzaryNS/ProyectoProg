@@ -13,6 +13,19 @@ namespace ProyectoFinal.Controllers
             return View();
         }
 
+        public ActionResult Mantenimientos()
+        {
+            return View();
+        }
+
+        public ActionResult Procesos()
+        {
+            return View();
+        }
+        public ActionResult Consultas()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
