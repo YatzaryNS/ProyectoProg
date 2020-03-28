@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-4">
             <div class="card border-info" style="width: 18rem;">
-                <img src="~/img/citas.jpg" class="card-img-top imagen-carta" alt="..." width="300px" height="200px">
+                <img src="~/img/citas.jpg" class="card-img-top imagen-carta" alt="..." width="200px" height="200px">
                 <div class="card-body">
                     <h5 class="card-title"><b>Citas médicas</b></h5>
                     <p class="card-text" align="justify">En el siguiente módulo se le reserverá una cita a determinada fecha y hora con determinado doctor </p>
@@ -21,10 +21,12 @@
         <br />
         <div class="col-4">
             <div class="card border-info" style="width: 18rem;">
-                <img src="~/img/ingreso.jpg" class="card-img-top imagen-carta" alt="..." width="300px" height="200px">
+                <img src="~/img/ingreso.jpg" class="card-img-top imagen-carta" alt="..." width="200px" height="200px">
                 <div class="card-body">
                     <h5 class="card-title"><b>Ingresos</b></h5>
-                    <p class="card-text" align="justify">En el siguiente módulo se ingresará en una habitación a determinado paciente</p>
+                    <p class="card-text" align="justify">En el siguiente módulo se ingresará en una habitación a determinado paciente                    
+                    </p>
+                    <br/>
                     @Html.ActionLink("Llévame al módulo", "Index", "Home", "", new { @class = "btn btn-danger" })
                 </div>
             </div>
@@ -32,7 +34,7 @@
         <br />
         <div class="col-4">
             <div class="card border-info" style="width: 18rem;">
-                <img src="~/img/alta.jpg" class="card-img-top imagen-carta" alt="..." width="300px" height="200px">
+                <img src="~/img/alta.jpg" class="card-img-top imagen-carta" alt="..." width="200px" height="200px">
                 <div class="card-body">
                     <h5 class="card-title"><b>Alta médica</b></h5>
                     <p class="card-text" align="justify">En el siguiente módulo se recupera el registro de ingreso para dar el alta del paciente</p>
