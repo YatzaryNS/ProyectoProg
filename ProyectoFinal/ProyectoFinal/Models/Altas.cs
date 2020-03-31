@@ -17,6 +17,12 @@ namespace ProyectoFinal.Models
         [ForeignKey("Ingreso_Id")]
         public Ingresos Ingresos { set; get; }
 
+        public string Fecha_Ingreso { set; get; }
+
+        public string Nombre { set; get; }
+
+        public int Numero { set; get; }
+
         [Required]
         public string Fecha_Salida { set; get; }
 
