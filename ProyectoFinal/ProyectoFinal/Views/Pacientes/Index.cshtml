@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Cedula)
+            @Html.DisplayName("Cédula")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Asegurado)
+           @Html.DisplayFor(modelItem => item.Asegurado)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IdPacientes }) |

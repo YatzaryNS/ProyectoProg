@@ -39,8 +39,8 @@ namespace ProyectoFinal.Controllers
         // GET: Citas/Create
         public ActionResult Create()
         {
-            ViewBag.Medico_Id = new SelectList(db.Medicos, "IdMedicos", "Nombre");
-            ViewBag.Paciente_Id = new SelectList(db.Pacientes, "IdPacientes", "Cedula");
+            ViewBag.Medico_Id = new SelectList(db.Medicos, "IdMedicos", "IdMedicos");
+            ViewBag.Paciente_Id = new SelectList(db.Pacientes, "IdPacientes", "IdPacientes");
             return View();
         }
 

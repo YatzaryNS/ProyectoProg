@@ -14,7 +14,7 @@
                     <h5 class="card-title"><b>Citas médicas</b></h5>
                     <p class="card-text" align="justify">En el siguiente módulo se le reserverá una cita a determinada fecha y hora con determinado doctor </p>
 
-                    @Html.ActionLink("Llévame al módulo", "Index", "Home", "", new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Llévame al módulo", "Create", "Citas", "", new { @class = "btn btn-danger" })
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                     <p class="card-text" align="justify">En el siguiente módulo se ingresará en una habitación a determinado paciente                    
                     </p>
                     <br/>
-                    @Html.ActionLink("Llévame al módulo", "Index", "Home", "", new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Llévame al módulo", "Create", "Ingresos", "", new { @class = "btn btn-danger" })
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><b>Alta médica</b></h5>
                     <p class="card-text" align="justify">En el siguiente módulo se recupera el registro de ingreso para dar el alta del paciente</p>
-                    @Html.ActionLink("Llévame al módulo", "Index", "Home", "", new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Llévame al módulo", "Create", "Altas", "", new { @class = "btn btn-danger" })
                 </div>
             </div>
         </div>
