@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProyectoFinal.Models.Medicos>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tabla Médicos";
 }
 
 <h2>Tabla Médicos</h2>
@@ -9,6 +9,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<form action="Altas" method="post">
+    <input type="text" name="busqueda" placeholder="Valor a buscar" class="form-horizontal" />
+    <input type="submit" value="BUSCAR" class="btn-danger" />
+</form>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -23,23 +28,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Exequatur)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Especialidad)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdMedicos }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdMedicos }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdMedicos })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exequatur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especialidad)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdMedicos }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdMedicos }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdMedicos })
+            </td>
+        </tr>
+    }
 
 </table>

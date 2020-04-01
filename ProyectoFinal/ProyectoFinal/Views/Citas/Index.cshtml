@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProyectoFinal.Models.Citas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tabla Citas";
 }
 
 <h2>Tabla Citas</h2>
@@ -9,6 +9,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<form action="Altas" method="post">
+    <input type="text" name="busqueda" placeholder="Valor a buscar" class="form-horizontal" />
+    <input type="submit" value="BUSCAR" class="btn-danger" />
+</form>
+<br />
 <table class="table">
     <tr>
         <th>
@@ -26,26 +31,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Medicos.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pacientes.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hora)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdCitas }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdCitas }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdCitas })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicos.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pacientes.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdCitas }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdCitas }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdCitas })
+            </td>
+        </tr>
+    }
 
 </table>

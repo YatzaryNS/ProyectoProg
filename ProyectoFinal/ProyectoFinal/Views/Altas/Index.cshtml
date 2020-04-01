@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ProyectoFinal.Models.Altas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tabla Altas";
 }
 
 <h2>Tabla Altas</h2>
@@ -9,6 +9,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<form action="Altas" method="post">
+    <input type="text" name="busqueda" placeholder="Valor a buscar" class="form-horizontal" />
+    <input type="submit" value="BUSCAR" class="btn-danger"/>
+</form>
+<br/>
 <table class="table">
     <tr>
         <th>
@@ -61,3 +66,5 @@
 }
 
 </table>
+
+
