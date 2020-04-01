@@ -46,7 +46,7 @@ namespace ProyectoFinal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdHabitacion,Numero,Tipo,Precio")] Habitaciones habitaciones)
+        public ActionResult Create([Bind(Include = "IdHabitacion,Numero,Precio,Tipo")] Habitaciones habitaciones)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace ProyectoFinal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdHabitacion,Numero,Tipo,Precio")] Habitaciones habitaciones)
+        public ActionResult Edit([Bind(Include = "IdHabitacion,Numero,Precio,Tipo")] Habitaciones habitaciones)
         {
             if (ModelState.IsValid)
             {

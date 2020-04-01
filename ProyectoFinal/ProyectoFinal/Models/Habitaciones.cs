@@ -9,12 +9,17 @@ namespace ProyectoFinal.Models
     public class Habitaciones
     {
         [Key]
-        public int IdHabitacion { set; get; }
+        public int IdHabitacion { get; set; } 
         [Required]
-        public int Numero { set; get; }
+        public int Numero { get; set; }
         [Required]
-        public string Tipo { set; get; }
+        public double Precio { get; set; }
         [Required]
-        public double Precio { set; get; }
+        public TipoHab Tipo { get; set; }
+
+        public enum TipoHab
+        {
+            Doble,Suite,Privada
+        }
     }
-}
+} 

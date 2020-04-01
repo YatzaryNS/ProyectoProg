@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tabla Habitaciones</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -15,10 +15,10 @@
             @Html.DisplayName("Número")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tipo)
+            @Html.DisplayNameFor(model => model.Precio)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Precio)
+            @Html.DisplayNameFor(model => model.Tipo)
         </th>
         <th></th>
     </tr>
@@ -29,10 +29,10 @@
             @Html.DisplayFor(modelItem => item.Numero)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tipo)
+            @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Precio)
+            @Html.DisplayFor(modelItem => item.Tipo)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IdHabitacion }) |

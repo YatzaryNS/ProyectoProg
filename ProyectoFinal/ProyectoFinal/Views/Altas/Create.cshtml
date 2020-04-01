@@ -4,72 +4,182 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create Alta Médica</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Altas</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Ingreso_Id, "ID Ingreso", htmlAttributes: new { @class = "control-label col-md-2", type="date"})
-            <div class="col-md-10">
-                @Html.DropDownList("Ingreso_Id", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Ingreso_Id, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Fecha_Ingreso, "Fecha de ingreso", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Fecha_Ingreso,new { htmlAttributes = new { @class = "form-control", type="date" } })
-                @Html.ValidationMessageFor(model => model.Fecha_Ingreso, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Numero,"Número", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Fecha_Salida, "Fecha de salida", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Fecha_Salida,new { htmlAttributes = new { @class = "form-control", type="date" } })
-                @Html.ValidationMessageFor(model => model.Fecha_Salida, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Monto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Monto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Monto, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-danger" />
-            </div>
+<div class="form-horizontal">
+    <h4>RETROALIMENTACIÓN: Primero seleccione la fecha de salida y el id de ingreso</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Fecha_Salida, "Fecha de salida", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Fecha_Salida, new { htmlAttributes = new { @class = "form-control", id = "FechaSalida", type = "date" } })
+            @Html.ValidationMessageFor(model => model.Fecha_Salida, "", new { @class = "text-danger" })
         </div>
     </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ingreso_Id, "ID Ingreso", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Ingreso_Id", null, htmlAttributes: new { @class = "form-control", id = "list" })
+            @Html.ValidationMessageFor(model => model.Ingreso_Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Monto, "Monto Habitación", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Monto, new { htmlAttributes = new { @class = "form-control", id = "Monto" } })
+            @Html.ValidationMessageFor(model => model.Monto, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Fecha_Ingreso, "Fecha de ingreso", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Fecha_Ingreso, new { htmlAttributes = new { @class = "form-control", id = "FechaInicio" } })
+            @Html.ValidationMessageFor(model => model.Fecha_Ingreso, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", id = "Paciente" } })
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Numero, "Número", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control", id = "NumeroHabitacion" } })
+            @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Total_Pagar, "Total a pagar", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Total_Pagar, new { htmlAttributes = new { @class = "form-control", id = "MontoFinal" } })
+            @Html.ValidationMessageFor(model => model.Total_Pagar, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-danger" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function (){
+            $("#list").change(function () {
+                var url = "@Url.Action("Nombre", "Altas")";
+                var clavePaciente = $("#list").val();
+                var data = { clavePaciente: clavePaciente };
+                $.post(url, data).done(function (data) {
+                    $("#Paciente").val(data);
+                }).fail(manejarErrorAjax).always(function (){
+
+                });
+            });
+             $("#list").change(function () {
+                var url = "@Url.Action("FechaIngreso", "Altas")";
+                var clavePaciente = $("#list").val();
+                var data = { clavePaciente: clavePaciente };
+                $.post(url, data).done(function (data) {
+                    $("#FechaInicio").val(data);
+                }).fail(manejarErrorAjax).always(function (){
+
+                });
+             });
+             $("#list").change(function () {
+                var url = "@Url.Action("NumeroHabitacion", "Altas")";
+                var clavePaciente = $("#list").val();
+                var data = { clavePaciente: clavePaciente };
+                $.post(url, data).done(function (data) {
+                    $("#NumeroHabitacion").val(data);
+                }).fail(manejarErrorAjax).always(function (){
+
+                });
+             });
+
+            $("#list").change(function () {
+
+                $("#FechaSalida").val();
+
+            });
+
+            $("#list").change(function () {
+                var url = "@Url.Action("Monto", "Altas")";
+                var clavePaciente = $("#list").val();
+                var data = { clavePaciente: clavePaciente };
+                $.post(url, data).done(function (data) {
+                    $("#Monto").val(data);
+                }).fail(manejarErrorAjax).always(function (){
+
+                });
+             });
+
+            $("#list").change(function () {
+                var url = "@Url.Action("Monto", "Altas")";
+                var clavePaciente = $("#list").val();
+                var data = { clavePaciente: clavePaciente };
+                $.post(url, data).done(function (data) {
+                    $("#MontoFinal").val(generaMonto(data));
+                }).fail(manejarErrorAjax).always(function (){
+
+                });
+             });
+
+
+            function manejarErrorAjax(err) {
+                console.log(err.responseText);
+            }
+        })
+
+   /*    function addZero(i) {
+            if (i < 10) {
+                i = '0' + i;
+            }
+            return i;
+        }
+
+        function hoyFecha() {
+            var hoy = new Date();
+            var dd = hoy.getDate();
+            var mm = hoy.getMonth() + 1;
+            var yyyy = hoy.getFullYear();
+
+            dd = addZero(dd);
+            mm = addZero(mm);
+
+            return yyyy + '-' + mm + '-' + dd;
+        }*/
+        console.log(generaMonto())
+
+        function generaMonto(data) {
+            var fechaf = $("#FechaSalida").val().replace("-", "");
+            var fechai = $("#FechaInicio").val().replace("-", "");
+            var montoPorDia = data;
+            resta = fechaf.replace("-", "") - fechai.replace("-", "");
+
+            return resta * data;
+        }
+
+    </script>
+}

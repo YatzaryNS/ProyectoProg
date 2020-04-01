@@ -27,5 +27,7 @@ namespace ProyectoFinal.Models
         public string Fecha_Salida { set; get; }
 
         public double Monto { set; get; }
+
+        public double Total_Pagar { set; get; }
     }
 }

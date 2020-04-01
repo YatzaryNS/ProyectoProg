@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tabla Altas</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,52 +12,52 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Ingresos.Fecha_Ingreso)
+            @Html.DisplayName("Fecha de salida")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fecha_Ingreso)
+            @Html.DisplayName("Fecha de ingreso")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.DisplayName("Monto Habitación")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Numero)
+            @Html.DisplayName("Nombre Paciente")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fecha_Salida)
+            @Html.DisplayName("Número Habitación")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Monto)
+            @Html.DisplayName("Total a pagar")
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ingresos.Fecha_Ingreso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_Ingreso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Numero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_Salida)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Monto)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdAltas }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdAltas }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdAltas })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fecha_Salida)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Fecha_Ingreso)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Monto)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Numero)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Total_Pagar)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.IdAltas }) |
+        @Html.ActionLink("Details", "Details", new { id = item.IdAltas }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.IdAltas })
+    </td>
+</tr>
 }
 
 </table>
