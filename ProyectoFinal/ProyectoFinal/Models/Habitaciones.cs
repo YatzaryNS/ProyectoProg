@@ -11,7 +11,7 @@ namespace ProyectoFinal.Models
         [Key]
         public int IdHabitacion { get; set; } 
         [Required]
-        public int Numero { get; set; }
+        public string Numero { get; set; }
         [Required]
         public double Precio { get; set; }
         [Required]

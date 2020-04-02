@@ -22,31 +22,31 @@ namespace ProyectoFinal.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index (string buscar)
+        public ActionResult Index(string buscar)
         {
-           if (buscar=="Doble")
+            if (buscar == "Doble")
             {
 
                 var datos = (from d in db.Habitaciones
-                            where d.Tipo == Habitaciones.TipoHab.Doble
-                            select d);
+                             where d.Tipo == Habitaciones.TipoHab.Doble
+                             select d);
                 return View(datos);
 
             }
-           else if (buscar == "Privada")
-           {
+            else if (buscar == "Privada")
+            {
 
                 var datos = (from d in db.Habitaciones
-                            where d.Tipo == Habitaciones.TipoHab.Privada
-                            select d);
+                             where d.Tipo == Habitaciones.TipoHab.Privada
+                             select d);
                 return View(datos);
             }
             else if (buscar == "Suite")
             {
 
                 var datos = (from d in db.Habitaciones
-                            where d.Tipo == Habitaciones.TipoHab.Suite
-                            select d);
+                             where d.Tipo == Habitaciones.TipoHab.Suite
+                             select d);
                 return View(datos);
             }
             return View();

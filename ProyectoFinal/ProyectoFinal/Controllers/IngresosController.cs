@@ -31,11 +31,14 @@ namespace ProyectoFinal.Controllers
                 return View(ingresos.ToList());
 
             }
-            else if (select == "Habitacion")
+            else if (select == "Habitacion")               
             {
-                int c = (from d in db.Habitaciones where d.Numero == buscar select d.Numero).SingleOrDefault();
 
-                var ingresos = db.Ingresos.Include(i => i.Habitaciones).Include(i => i.Pacientes).Where(e=>e.Habitacion_Id.Equals(select));
+                int datos = (from a in db.Habitaciones
+                            where a.Numero == buscar
+                            select a.IdHabitacion).SingleOrDefault();
+
+                var ingresos = db.Ingresos.Include(i => i.Habitaciones).Include(i => i.Pacientes).Where(e => e.Habitacion_Id.Equals(datos));
                 return View(ingresos.ToList());
             }
 
