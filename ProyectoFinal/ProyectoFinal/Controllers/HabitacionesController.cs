@@ -20,6 +20,36 @@ namespace ProyectoFinal.Controllers
             return View(db.Habitaciones.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index (string buscar)
+        {
+           if (buscar=="Doble")
+            {
+
+                var data = (from d in db.Habitaciones
+                            where d.Tipo == Habitaciones.TipoHab.Doble
+                            select d);
+
+            }
+            if (buscar == "Privada")
+           {
+
+                var data = (from d in db.Habitaciones
+                            where d.Tipo == Habitaciones.TipoHab.Privada
+                            select d);
+
+            }
+            if (buscar == "Suite")
+            {
+
+                var data = (from d in db.Habitaciones
+                            where d.Tipo == Habitaciones.TipoHab.Suite
+                            select d);
+
+            }
+            return View();
+        }
+
         // GET: Habitaciones/Details/5
         public ActionResult Details(int? id)
         {

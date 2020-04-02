@@ -5,15 +5,28 @@
 }
 
 <h2>Tabla Médicos</h2>
+<div>
+    @using (Html.BeginForm("Index", "Medicos", FormMethod.Post))
+    {
+        <h5>Consultar</h5>
+        <div class="row">
+            <select name="select" class="form-control col col-lg-2">
+                <option value="">Selecciona</option>
+                <option value="Nombre">Nombre</option>
+                <option value="Especialidad">Especialidad</option>
+            </select>
 
+            @Html.TextBox("buscar", "", new { @class = "form-control col-md-4", placeholder = "Busqueda", required = "required" })
+
+            <div class="col-2">
+                <button type="submit" class="btn btn-danger">Buscar</button>
+            </div>
+        </div>
+    }
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<form action="Altas" method="post">
-    <input type="text" name="busqueda" placeholder="Valor a buscar" class="form-horizontal" />
-    <input type="submit" value="BUSCAR" class="btn-danger" />
-</form>
-<br />
 <table class="table">
     <tr>
         <th>

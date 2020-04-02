@@ -19,7 +19,32 @@ namespace ProyectoFinal.Controllers
         {
             return View(db.Medicos.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(string select, string buscar)
+        {
+            if (select == "Nombre")
+            {
+                var data = from a in db.Medicos
+                           select a;
 
+                data = data.Where(a => a.Nombre.Contains(buscar));
+
+                return View(data);
+
+            }
+            else if (select == "Especialidad")
+            {
+
+                var data = from a in db.Medicos
+                           select a;
+
+                data = data.Where(a => a.Especialidad.Contains(buscar));
+                return View(data);
+
+            }
+            return View();
+
+        }
         // GET: Medicos/Details/5
         public ActionResult Details(int? id)
         {

@@ -20,6 +20,52 @@ namespace ProyectoFinal.Controllers
             return View(db.Pacientes.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string select, string buscar)
+        {
+            if (select == "Nombre")
+            {
+                var data = from a in db.Pacientes
+                           select a;
+
+                data = data.Where(a => a.Nombre.Contains(buscar));
+
+                return View(data);
+
+            }
+            else if (select == "Asegurado")
+            {
+                if (buscar == "Si" || buscar == "si" || buscar == "SI" || buscar == "sI")
+                {
+                    var data = from a in db.Pacientes
+                               where a.Asegurado.Equals(true)
+                               select a;
+
+                    return View(data);
+
+                }
+                else if (buscar == "No" || buscar == "no" || buscar == "NO" || buscar == "nO")
+                {
+                    var data = from a in db.Pacientes
+                               where a.Asegurado.Equals(false)
+                               select a;
+
+                    return View(data);
+                }
+            }
+            else if (select == "Cedula")
+            {
+
+                var data = from a in db.Pacientes
+                           select a;
+
+                data = data.Where(a => a.Cedula.Contains(buscar));
+                return View(data);
+
+            }
+            return View();
+
+        }
         // GET: Pacientes/Details/5
         public ActionResult Details(int? id)
         {

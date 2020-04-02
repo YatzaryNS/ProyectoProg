@@ -21,8 +21,9 @@ namespace ProyectoFinal.Controllers
             return View(citas.ToList());
         }
 
-        // GET: Citas/Details/5
-        public ActionResult Details(int? id)
+
+            // GET: Citas/Details/5
+            public ActionResult Details(int? id)
         {
             if (id == null)
             {

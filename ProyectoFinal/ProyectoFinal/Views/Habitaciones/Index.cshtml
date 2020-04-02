@@ -5,15 +5,25 @@
 }
 
 <h2>Tabla Habitaciones</h2>
+<div>
+    @using (Html.BeginForm("Index", "Habitaciones", FormMethod.Post))
+    {
+        <h5>Consultar</h5>
+            <select name="buscar" class="form-control col col-lg-2">
+                <option value="">Selecciona</option>
+                <option value="Doble">Doble</option>
+                <option value="Privada">Privada</option>
+                <option value="Suite">Suite</option>
+            </select>
 
+            <div class="col-2">
+              <button type="submit" class="btn btn-danger">Buscar</button>
+            </div>
+    }
+</div>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<form action="Altas" method="post">
-    <input type="text" name="busqueda" placeholder="Valor a buscar" class="form-horizontal" />
-    <input type="submit" value="BUSCAR" class="btn-danger" />
-</form>
-<br />
 <table class="table">
     <tr>
         <th>
