@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ProyectoFinal.Models;
+using Rotativa;
 
 namespace ProyectoFinal.Controllers
 {
@@ -19,6 +20,12 @@ namespace ProyectoFinal.Controllers
         {
             var ingresos = db.Ingresos.Include(i => i.Habitaciones).Include(i => i.Pacientes);
             return View(ingresos.ToList());
+        }
+
+        public ActionResult Imprimir()
+        {
+            var print = new ActionAsPdf("Index");
+            return print;
         }
 
         // GET: Ingresos/Details/5
