@@ -22,6 +22,41 @@ namespace ProyectoFinal.Controllers
             return View(altas.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string select, string buscar)
+        {
+            if (select == "Fecha")
+            {
+                var altas = db.Altas.Include(c => c.Ingresos).Where(a => a.Fecha_Salida==buscar);
+
+                ViewBag.total = altas.Sum(c => c.Total_Pagar);
+                ViewBag.cont = altas.Count();
+                ViewBag.min = altas.Min(c => c.Total_Pagar);
+                ViewBag.max = altas.Max(c => c.Total_Pagar);
+                ViewBag.prom = altas.Average(c => c.Total_Pagar);
+
+                return View(altas.ToList());
+
+            }
+            
+            else if (select == "Paciente")
+            {
+                
+                var altas = db.Altas.Include(c => c.Ingresos).Where(a => a.Nombre == buscar);
+
+                ViewBag.total = altas.Sum(c => c.Total_Pagar);
+                ViewBag.cont = altas.Count();
+                ViewBag.min = altas.Min(c => c.Total_Pagar);
+                ViewBag.max = altas.Max(c => c.Total_Pagar);
+                ViewBag.prom = altas.Average(c => c.Total_Pagar);
+
+                return View(altas.ToList());
+
+            }
+            return View();
+
+        }
+
         public ActionResult Imprimir()
         {
             var print = new ActionAsPdf("Index");

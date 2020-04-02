@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<ProyectoFinal.Models.Altas>
 
+
 @{
     ViewBag.Title = "Tabla Altas";
 }
@@ -82,6 +83,37 @@
 
 </table>
 
-
-
+<center>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+        Ver operaciones
+    </button>
+</center>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <center>
+                    <h2 class="modal-title" id="exampleModalLabel"><b>Operaciones</b></h2>
+                </center>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <h4><b>Sumatoria del total a pagar:</b></h4>@ViewBag.total
+                    <h4><b>Total de busqueda:</b></h4>@ViewBag.cont
+                    <h4><b>Total a pagar mínimo:</b></h4>@ViewBag.min
+                    <h4><b>Total a pagar máximo:</b></h4>@ViewBag.max
+                    <h4><b>Promedio del total a pagar:</b></h4>@ViewBag.prom
+                </center>
+            </div>
+            <div class="modal-footer">
+                <center>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">CERRAR</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
 

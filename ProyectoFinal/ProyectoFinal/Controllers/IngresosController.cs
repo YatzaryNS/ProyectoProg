@@ -22,6 +22,27 @@ namespace ProyectoFinal.Controllers
             return View(ingresos.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string select, string buscar)
+        {
+            if (select == "Fecha")
+            {
+                var ingresos = db.Ingresos.Include(c => c.Habitaciones).Include(c => c.Pacientes).Where(a => a.Fecha_Ingreso.Contains(buscar));
+                return View(ingresos.ToList());
+
+            }
+            else if (select == "Habitacion")
+            {
+                //int c = (from d in db.Habitaciones where d.Numero == buscar select d.Numero).SingleOrDefault();
+
+                var ingresos = db.Ingresos.Include(i => i.Habitaciones).Include(i => i.Pacientes).Where(e=>e.Habitacion_Id.Equals(select));
+                return View(ingresos.ToList());
+            }
+
+            return View();
+
+        }
+
         public ActionResult Imprimir()
         {
             var print = new ActionAsPdf("Index");

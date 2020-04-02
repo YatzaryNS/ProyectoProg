@@ -26,42 +26,42 @@ namespace ProyectoFinal.Controllers
         {
             if (select == "Nombre")
             {
-                var data = from a in db.Pacientes
-                           select a;
+                var datos = from d in db.Pacientes
+                           select d;
 
-                data = data.Where(a => a.Nombre.Contains(buscar));
+                datos = datos.Where(a => a.Nombre.Contains(buscar));
 
-                return View(data);
+                return View(datos);
 
             }
             else if (select == "Asegurado")
             {
                 if (buscar == "Si" || buscar == "si" || buscar == "SI" || buscar == "sI")
                 {
-                    var data = from a in db.Pacientes
-                               where a.Asegurado.Equals(true)
-                               select a;
+                    var datos = from d in db.Pacientes
+                               where d.Asegurado.Equals(true)
+                               select d;
 
-                    return View(data);
+                    return View(datos);
 
                 }
                 else if (buscar == "No" || buscar == "no" || buscar == "NO" || buscar == "nO")
                 {
-                    var data = from a in db.Pacientes
-                               where a.Asegurado.Equals(false)
-                               select a;
+                    var datos = from d in db.Pacientes
+                               where d.Asegurado.Equals(false)
+                               select d;
 
-                    return View(data);
+                    return View(datos);
                 }
             }
             else if (select == "Cedula")
             {
 
-                var data = from a in db.Pacientes
-                           select a;
+                var datos = from d in db.Pacientes
+                           select d;
 
-                data = data.Where(a => a.Cedula.Contains(buscar));
-                return View(data);
+                datos = datos.Where(a => a.Cedula.Contains(buscar));
+                return View(datos);
 
             }
             return View();

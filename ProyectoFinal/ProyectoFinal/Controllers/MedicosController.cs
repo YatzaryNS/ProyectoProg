@@ -25,22 +25,22 @@ namespace ProyectoFinal.Controllers
         {
             if (select == "Nombre")
             {
-                var data = from a in db.Medicos
-                           select a;
+                var datos = from d in db.Medicos
+                           select d;
 
-                data = data.Where(a => a.Nombre.Contains(buscar));
+                datos = datos.Where(a => a.Nombre.Contains(buscar));
 
-                return View(data);
+                return View(datos);
 
             }
             else if (select == "Especialidad")
             {
 
-                var data = from a in db.Medicos
-                           select a;
+                var datos = from d in db.Medicos
+                           select d;
 
-                data = data.Where(a => a.Especialidad.Contains(buscar));
-                return View(data);
+                datos = datos.Where(a => a.Especialidad.Contains(buscar));
+                return View(datos);
 
             }
             return View();
