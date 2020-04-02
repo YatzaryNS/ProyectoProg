@@ -29,5 +29,6 @@ namespace ProyectoFinal.Models
         public double Monto { set; get; }
 
         public double Total_Pagar { set; get; }
+
     }
 }

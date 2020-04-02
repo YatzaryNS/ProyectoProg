@@ -9,16 +9,16 @@
     @using (Html.BeginForm("Index", "Habitaciones", FormMethod.Post))
     {
         <h5>Consultar</h5>
-            <select name="buscar" class="form-control col col-lg-2">
-                <option value="">Selecciona</option>
-                <option value="Doble">Doble</option>
-                <option value="Privada">Privada</option>
-                <option value="Suite">Suite</option>
-            </select>
+        <select name="buscar" class="form-control col col-lg-2">
+            <option value="">Selecciona</option>
+            <option value="Doble">Doble</option>
+            <option value="Privada">Privada</option>
+            <option value="Suite">Suite</option>
+        </select>
 
-            <div class="col-2">
-              <button type="submit" class="btn btn-danger">Buscar</button>
-            </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-danger">Buscar</button>
+        </div>
     }
 </div>
 <p>
@@ -60,3 +60,4 @@
     }
 
 </table>
+

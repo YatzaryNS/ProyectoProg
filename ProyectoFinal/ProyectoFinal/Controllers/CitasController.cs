@@ -21,7 +21,39 @@ namespace ProyectoFinal.Controllers
             var citas = db.Citas.Include(c => c.Medicos).Include(c => c.Pacientes);
             return View(citas.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(string select, string buscar)
+        {
+            if (select == "Fecha")
+            {
+                var citas = db.Citas.Include(c => c.Medicos).Include(c => c.Pacientes).Where(a => a.Fecha.Contains(buscar));
+                return View(citas.ToList());
 
+            }
+            else if (select == "Doctor")
+            {
+
+                var datos = (from a in db.Medicos
+                            where a.Nombre == buscar
+                            select a.IdMedicos).SingleOrDefault();
+
+                var citas = db.Citas.Include(c => c.Medicos).Include(c => c.Pacientes).Where(a => a.Medico_Id.Equals(datos));
+                return View(citas.ToList());
+            }
+            else if (select == "Paciente")
+            {
+                var datos = (from a in db.Pacientes
+                            where a.Nombre == buscar
+                            select a.IdPacientes).SingleOrDefault();
+
+                var citas = db.Citas.Include(c => c.Medicos).Include(c => c.Pacientes).Where(a => a.Paciente_Id.Equals(datos));
+                return View(citas.ToList());
+
+            }
+
+            return View();
+
+        }
         public ActionResult Imprimir()
         {
             var print = new ActionAsPdf("Index");

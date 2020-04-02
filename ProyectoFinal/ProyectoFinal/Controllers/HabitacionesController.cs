@@ -30,23 +30,24 @@ namespace ProyectoFinal.Controllers
                 var data = (from d in db.Habitaciones
                             where d.Tipo == Habitaciones.TipoHab.Doble
                             select d);
+                return View(data);
 
             }
-            if (buscar == "Privada")
+           else if (buscar == "Privada")
            {
 
                 var data = (from d in db.Habitaciones
                             where d.Tipo == Habitaciones.TipoHab.Privada
                             select d);
-
+                return View(data);
             }
-            if (buscar == "Suite")
+            else if (buscar == "Suite")
             {
 
                 var data = (from d in db.Habitaciones
                             where d.Tipo == Habitaciones.TipoHab.Suite
                             select d);
-
+                return View(data);
             }
             return View();
         }
