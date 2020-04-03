@@ -11,16 +11,16 @@
         <h5>Consultar</h5>
         <div class="row">
             <select name="select" class="form-control col col-lg-2" required="required">
-                <option value="">Selecciona</option>
+                <option value="">Opciones</option>
                 <option value="Nombre">Nombre</option>
                 <option value="Cedula">Cedula</option>
                 <option value="Asegurado">Asegurado</option>
             </select>
 
-            @Html.TextBox("buscar", "", new { @class = "form-control col-md-4", placeholder = "Busqueda", required = "required" })
+            @Html.TextBox("buscar", "", new { @class = "form-control col-md-4", placeholder = "Consulta", required = "required" })
             
             <div class="col-2">
-                <button type="submit" class="btn btn-danger">Buscar</button>
+                <button type="submit" class="btn btn-danger">Consultar</button>
             </div>
         </div>
     }
