@@ -11,10 +11,10 @@
     {
         <h5>Consultar</h5>
         <div class="row">
-            <select name="select" class="form-control col col-lg-2">
+            <select name="select" class="form-control col col-lg-2" required="required">
                 <option value="">Selecciona</option>
                 <option value="Paciente">Paciente</option>
-                <option value="Fecha">Fecha</option>
+                <option value="Fecha">Fecha Salida</option>
             </select>
 
             @Html.TextBox("buscar", "", new { @class = "form-control col-md-4", placeholder = "Busqueda", required = "required" })
