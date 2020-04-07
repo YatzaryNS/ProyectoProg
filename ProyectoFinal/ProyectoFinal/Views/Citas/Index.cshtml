@@ -10,7 +10,7 @@
     {
         <h5>Consultar</h5>
         <div class="row">
-            <select name="select" class="form-control col col-lg-2", required="required">
+            <select name="select" class="form-control col col-lg-2" , required="required">
                 <option value="">Opciones</option>
                 <option value="Fecha">Fecha</option>
                 <option value="Doctor">Doctor</option>
@@ -19,17 +19,17 @@
 
             @Html.TextBox("buscar", "", new { @class = "form-control col-md-4", placeholder = "Consulta", required = "required" })
 
-            <div class="col-2">
-                <button type="submit" class="btn btn-danger">Consultar</button>
-            </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-danger">Consultar</button>
+            <button onclick="reportepdf()" class="btn btn-danger">Imprimir</button>
+        </div>
         </div>
     }
 </div>
 <p>
     @Html.ActionLink("--Create New ", "Create")
-    @Html.ActionLink("--Print", "Imprimir")
 </p>
-<table class="table">
+<table class="table" id="documento">
     <tr>
         <th>
             @Html.DisplayName("Nombre Médico")

@@ -18,14 +18,14 @@
 
         <div class="col-2">
             <button type="submit" class="btn btn-danger">Consultar</button>
+            <button onclick="reportepdf()" class="btn btn-danger">Imprimir</button>
         </div>
     }
 </div>
 <p>
     @Html.ActionLink("--Create New ", "Create")
-    @Html.ActionLink("--Print", "Imprimir")
 </p>
-<table class="table">
+<table class="table" id="documento">
     <tr>
         <th>
             @Html.DisplayName("Número")

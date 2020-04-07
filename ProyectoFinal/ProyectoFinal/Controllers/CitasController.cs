@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ProyectoFinal.Models;
-using Rotativa;
+//using Rotativa;
 
 namespace ProyectoFinal.Controllers
 {
@@ -55,11 +55,12 @@ namespace ProyectoFinal.Controllers
             return View();
 
         }
-        public ActionResult Imprimir()
+
+        /*public ActionResult Imprimir()
         {
             var print = new ActionAsPdf("Index");
             return print;
-        }
+        }*/
 
         // GET: Citas/Details/5
         public ActionResult Details(int? id)
