@@ -42,7 +42,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Fecha_Ingreso, "Fecha de ingreso", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Fecha_Ingreso, new { htmlAttributes = new { @class = "form-control", id = "FechaInicio" } })
+            @Html.EditorFor(model => model.Fecha_Ingreso, new { htmlAttributes = new { @class = "form-control", id = "FechaInicio"} })
             @Html.ValidationMessageFor(model => model.Fecha_Ingreso, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -173,13 +173,27 @@
         console.log(generaMonto())
 
         function generaMonto(data) {
-            var fechaf = $("#FechaSalida").val().replace("-", "");
-            var fechai = $("#FechaInicio").val().replace("-", "");
+            var fechasal = $("#FechaSalida").val().replace("-", "");
+            var fechaing = $("#FechaInicio").val().replace("-", "");
             var montoPorDia = data;
-            resta = fechaf.replace("-", "") - fechai.replace("-", "");
+            resta = fechasal.replace("-", "") - fechaing.replace("-", "");
 
             return resta * data;
         }
+
+         console.log(generarMonto())
+            function generarMonto(data)
+            {
+                var fechasal = document.getElementById("FechaSalida").value;
+                var fechaing = document.getElementById("FechaInicio").value;
+
+                var fechaing2 = new Date(fechaing);
+                var fechasal2 = new Date(fechasal);
+                var resta1 = fechasal2.getTime() - fechaing2.getTime();
+                var resta2 = Math.round(resta1 / (1000 * 60 * 60 * 24))
+                return resta2 * data;
+
+            }
 
     </script>
 }

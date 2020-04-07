@@ -95,6 +95,7 @@ namespace ProyectoFinal.Controllers
         {
             ViewBag.Ingreso_Id = new SelectList(db.Ingresos, "IdIngresos", "IdIngresos");
             return View();
+
         }
 
         // POST: Altas/Create
