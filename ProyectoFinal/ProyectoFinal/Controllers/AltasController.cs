@@ -29,6 +29,7 @@ namespace ProyectoFinal.Controllers
             {
                 var altas = db.Altas.Include(c => c.Ingresos).Where(a => a.Fecha_Salida==buscar);
 
+                try { 
                 ViewBag.total = altas.Sum(c => c.Total_Pagar);
                 ViewBag.cont = altas.Count();
                 ViewBag.min = altas.Min(c => c.Total_Pagar);
@@ -36,6 +37,11 @@ namespace ProyectoFinal.Controllers
                 ViewBag.prom = altas.Average(c => c.Total_Pagar);
 
                 return View(altas.ToList());
+                }
+                catch(Exception e)
+                {
+                    return View(altas.ToList());
+                }
 
             }
             
@@ -44,6 +50,7 @@ namespace ProyectoFinal.Controllers
                 
                 var altas = db.Altas.Include(c => c.Ingresos).Where(a => a.Nombre == buscar);
 
+                try { 
                 ViewBag.total = altas.Sum(c => c.Total_Pagar);
                 ViewBag.cont = altas.Count();
                 ViewBag.min = altas.Min(c => c.Total_Pagar);
@@ -51,6 +58,11 @@ namespace ProyectoFinal.Controllers
                 ViewBag.prom = altas.Average(c => c.Total_Pagar);
 
                 return View(altas.ToList());
+                }
+                catch(Exception e)
+                {
+                    return View(altas.ToList());
+                }
 
             }
             return View();
