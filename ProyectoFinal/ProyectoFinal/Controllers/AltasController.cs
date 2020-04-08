@@ -183,46 +183,47 @@ namespace ProyectoFinal.Controllers
             }
             base.Dispose(disposing);
         }
-        public JsonResult Nombre(int clavePaciente)
+
+        public JsonResult Nombre(int idPaciente)
         {
 
-            var duplicado = (from i in db.Ingresos
+            var datos = (from i in db.Ingresos
                              join p in db.Pacientes
                              on i.Paciente_Id equals p.IdPacientes
-                             where i.IdIngresos == clavePaciente
+                             where i.IdIngresos == idPaciente
                              select p.Nombre).ToList();
-            return Json(duplicado);
+            return Json(datos);
         }
 
-        public JsonResult Monto(int clavePaciente)
+        public JsonResult Monto(int idPaciente)
         {
 
-            var duplicado = (from i in db.Ingresos
+            var datos = (from i in db.Ingresos
                              join h in db.Habitaciones
                              on i.Habitacion_Id equals h.IdHabitacion
-                             where i.IdIngresos == clavePaciente
+                             where i.IdIngresos == idPaciente
                              select h.Precio).ToList();
-            return Json(duplicado);
+            return Json(datos);
         }
 
-        public JsonResult FechaIngreso(int clavePaciente)
+        public JsonResult FechaIngreso(int idPaciente)
         {
 
-            var duplicado = (from i in db.Ingresos
-                             where i.IdIngresos == clavePaciente
+            var datos = (from i in db.Ingresos
+                             where i.IdIngresos == idPaciente
                              select i.Fecha_Ingreso).ToList();
-            return Json(duplicado);
+            return Json(datos);
         }
 
-        public JsonResult NumeroHabitacion(int clavePaciente)
+        public JsonResult NumeroHabitacion(int idPaciente)
         {
 
-            var duplicado = (from i in db.Ingresos
+            var datos = (from i in db.Ingresos
                              join h in db.Habitaciones
                              on i.Habitacion_Id equals h.IdHabitacion
-                             where i.IdIngresos == clavePaciente
+                             where i.IdIngresos == idPaciente
                              select h.Numero).ToList();
-            return Json(duplicado);
+            return Json(datos);
         }
             
     }
